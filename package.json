@@ -2,11 +2,11 @@
   "name": "google-play-store",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "mocha",
-    "start": "node server",
-    "dev": "nodemon server"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
