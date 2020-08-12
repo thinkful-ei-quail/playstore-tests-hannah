@@ -1,7 +1,6 @@
 {
   "name": "google-play-store",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "mocha",
@@ -23,5 +22,14 @@
     "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
     "supertest": "^4.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thinkful-ei-quail/playstore-tests-hannah.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thinkful-ei-quail/playstore-tests-hannah/issues"
+  },
+  "homepage": "https://github.com/thinkful-ei-quail/playstore-tests-hannah#readme",
+  "description": ""
 }
