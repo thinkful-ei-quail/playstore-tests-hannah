@@ -1,11 +1,13 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 
 const playStore = require('./play-store');
 
 const app = express();
 
 app.use(morgan('common'));
+app.use(cors());
 
 app.get('/apps', (req, res) => {
   let { sort, genre } = req.query;
@@ -26,6 +28,9 @@ app.get('/apps', (req, res) => {
   }
 
   if (sort) {
+    if (!['Rating', 'App'].includes(sort)) {
+      return res.status(400).send('Sort must be one of Rating or App');
+    }
     filteredApps.sort((a, b) => {
       return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
     });
@@ -34,6 +39,4 @@ app.get('/apps', (req, res) => {
   res.json(filteredApps);
 });
 
-app.listen(8000, () => {
-  console.log('Server started on Port 8000');
-});
+module.exports = app;
